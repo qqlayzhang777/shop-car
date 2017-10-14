@@ -1,0 +1,14 @@
+{
+  "name": "vue-text1",
+  "version": "1.0.0",
+  "description": "vue-test1",
+  "main": "index.js",
+  "scripts": {
+    "test": "测试"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "大磊",
+  "license": "ISC"
+}
