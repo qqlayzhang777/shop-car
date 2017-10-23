@@ -20,13 +20,13 @@ new Vue({
 	},
 	methods: {
 		addressView: function () {
-			var _this = this
-			this.$http.get('data/address.json').then(function (response) {
-					var res = response.data
-					if (res.status == 0) {
-						_this.addressList = res.result
-					}
-			})
+		  var _this = this
+		  this.$http.get('data/address.json').then(function (response) {
+		    var res = response.data
+		    if (res.status == 0) {
+		      _this.addressList = res.result
+		    }
+		  })
 		},
 		// checkD: function (item, index) {
 		//  if(typeof item.checked == 'undefined') {
