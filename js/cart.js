@@ -30,12 +30,12 @@ var vm = new Vue({
         // _this.totalMoney = JSON.parse(res.body).result.totalMoney
       })
       this.productList.forEach((item,index)=>{
-				if(typeof item.checked == 'undefined'){
-					Vue.set(item, "checked", true)
-					this.id = this.productList.length
-					this.totalPay()
-				}
-			})
+	if(typeof item.checked == 'undefined'){
+	  Vue.set(item, "checked", true)
+	  this.id = this.productList.length
+	  this.totalPay()
+	}
+      })
     },
     numP: function (item,int) {
       if(int>0){
