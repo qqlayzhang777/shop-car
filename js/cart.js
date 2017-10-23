@@ -19,6 +19,7 @@ var vm = new Vue({
   mounted: function () {
     this.$nextTick(function () {
       this.cartview()
+//       this.checkD()
     })
   },
   methods: {
@@ -28,6 +29,13 @@ var vm = new Vue({
         _this.productList = JSON.parse(res.body).result.list
         // _this.totalMoney = JSON.parse(res.body).result.totalMoney
       })
+      this.productList.forEach((item,index)=>{
+				if(typeof item.checked == 'undefined'){
+					Vue.set(item, "checked", true)
+					this.id = this.productList.length
+					this.totalPay()
+				}
+			})
     },
     numP: function (item,int) {
       if(int>0){
@@ -40,13 +48,22 @@ var vm = new Vue({
       }
       this.totalPay()
     },
-    checkD: function (item) {
-      if(typeof item.checked == 'undefined'){
-        Vue.set(item, "checked", true)
-        this.id = this.productList.length
-        this.totalPay()
-      }
-    },
+//     checkD: function (item) {
+//       if(typeof item.checked == 'undefined'){
+//         Vue.set(item, "checked", true)
+//         this.id = this.productList.length
+//         this.totalPay()
+//       }
+//     },
+//     checkD: function () {
+// 			this.productList.forEach((item,index)=>{
+// 				if(typeof item.checked == 'undefined'){
+// 					Vue.set(item, "checked", true)
+// 					this.id = this.productList.length
+// 					this.totalPay()
+// 				}
+// 			})
+// 		},
     checkIt: function (item) {
       var _this = this  
       item.checked = !item.checked
